@@ -6,7 +6,7 @@ import json
 class Block:
 
     def __init__(self, timestamp=None, data=None):
-        self.timestamp = timestamp or time()
+        self.timestamp = timestamp or time.time()
         self.data = [] if data is None else data
         self.prevHash = None  # хеш предыдущего блока
         self.nonce = 0
