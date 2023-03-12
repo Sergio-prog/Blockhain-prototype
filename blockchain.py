@@ -20,7 +20,7 @@ class Block:
         hash.update(str(self.nonce).encode('utf-8'))
         return hash.hexdigest()
 
-    def mine(self, difficulty):
+    def mine(self, difficulty):  # Сложность вычисления нового хеща
         while self.hash[:difficulty] != '0' * difficulty:
             self.nonce += 1
             self.hash = self.getHash()
